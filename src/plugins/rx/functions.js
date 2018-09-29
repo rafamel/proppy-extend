@@ -1,21 +1,24 @@
 import Ajv from 'ajv';
-import ensemble from '../ensemble';
-import { none, intercept } from './functions';
 import { compose, withObservable as ppWithObservable } from 'proppy';
-import config from '../config';
+import ensemble from '../../ensemble';
+import { none, intercept } from '../../functions';
+import config from '../../config';
 
 const ajv = new Ajv();
 
-function subscription(getObs, opts, stream = false) {
-  const { connector, rx } = config.get();
-  if (!rx) throw Error('proppy-extend is not configured to use RxJS');
+function subscription(args, stream = false) {
+  const getObs = args[1] || args.pop();
+  const opts = typeof args[0] === 'string' ? { as: args[0] } : args[0] || {};
+
+  const { components } = config.get('connector');
+  const rx = config.get('rx');
 
   let options = {
     as: null,
     wait: true,
-    validate: false
+    validate: null
   };
-  if (opts) Object.assign(options, opts);
+  Object.assign(options, opts);
 
   const validation = options.validate && ajv.compile(options.validate);
 
@@ -31,16 +34,16 @@ function subscription(getObs, opts, stream = false) {
         );
       }),
       options.wait
-        ? intercept(() => !state.get('ready'), () => connector.components.Empty)
+        ? intercept(() => !state.get('ready'), () => components.Empty)
         : none()
     )
   );
 }
 
-export function withObservable(getObs, opts) {
-  return subscription(getObs, opts, false);
+export function withObservable(...args) {
+  return subscription(args, false);
 }
 
-export function withStream(getObs, opts) {
-  return subscription(getObs, opts, true);
+export function withStream(...args) {
+  return subscription(args, true);
 }

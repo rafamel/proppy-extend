@@ -3,7 +3,7 @@ import config from './config';
 import instance from './instance-extend';
 
 export default function attach(...args0) {
-  const { connector } = config.get();
+  const connector = config.get('connector');
 
   const P = instance.create(compose(...args0));
 
