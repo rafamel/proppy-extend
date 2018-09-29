@@ -67,7 +67,7 @@ export default enhance(MyComponent);
 
 ## Usage
 
-## `ensemble(initialState, callback)`
+### `ensemble(initialState, callback)`
 
 Share state between already created single functions.
 
@@ -162,7 +162,7 @@ intercept(
 );
 ```
 
-## `withProviders()`
+### `withProviders()`
 
 Merges `providers` with props.
 
@@ -172,7 +172,7 @@ import { withProviders } from 'proppy-extend';
 withProviders();
 ```
 
-## `onInit(callback)`
+### `onInit(callback)`
 
 Calls `callback` on initialization.
 
@@ -184,7 +184,7 @@ import { onInit } from 'proppy-extend';
 onInit((props) => { /* do stuff */ });
 ```
 
-## `none()`
+### `none()`
 
 Shorthand for a null function. Useful for conditional usage, particularly with `ensemble`.
 
@@ -194,7 +194,7 @@ import { none } from 'proppy-extend';
 none();
 ```
 
-## `withProps(options?, callback)`
+### `withProps(options?, callback)`
 
 * `options`: *Object* or *string*, optional.
   * As an *object*, it can have keys:
