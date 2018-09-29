@@ -58,6 +58,7 @@ registerSx({
     fs.readdirSync(__dirname)
       .filter((x) => !fs.lstatSync(path.join(__dirname, x)).isDirectory())
       .forEach((x) => {
+        if (x === 'package.json') return;
         fs.createReadStream(path.join(__dirname, x)).pipe(
           fs.createWriteStream(path.join(__dirname, OUT_DIR, x))
         );
