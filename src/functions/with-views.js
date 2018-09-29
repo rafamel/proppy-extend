@@ -1,6 +1,6 @@
 import { create } from 'proppy';
-import instance from '../instance-extend';
-import config from '../config';
+import instance from '~/instance-extend';
+import config from '~/config';
 
 // withViews('someView', (Component) => (props) => <div />, 'otherView')
 export default function withViews(...getComponentArr) {

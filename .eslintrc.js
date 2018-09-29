@@ -35,5 +35,11 @@ module.exports = {
     'jsx-a11y/href-no-hash': 0,
     // Prettier
     'prettier/prettier': [2, require('./.prettierrc')]
+  },
+  settings: {
+    // babel-plugin-module-resolver
+    'import/resolver': {
+      'babel-module': {}
+    }
   }
 };

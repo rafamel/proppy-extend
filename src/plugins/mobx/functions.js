@@ -1,5 +1,5 @@
 import { create } from 'proppy';
-import config from '../../config';
+import config from '~/config';
 
 export function withComputed(...args) {
   const mobx = config.get('mobx');

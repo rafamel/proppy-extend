@@ -1,5 +1,5 @@
 import withViews from './with-views';
-import config from '../config';
+import config from '~/config';
 
 export default function intercept(test, intercept) {
   const { components } = config.get('connector');
