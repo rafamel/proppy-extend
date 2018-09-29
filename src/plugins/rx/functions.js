@@ -1,6 +1,6 @@
 import Ajv from 'ajv';
 import { compose, withObservable as ppWithObservable } from 'proppy';
-import ensemble from '../../ensemble';
+import ensemble from '~/ensemble';
 import { none, intercept } from '~/functions';
 import config from '~/config';
 

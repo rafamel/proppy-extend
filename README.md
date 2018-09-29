@@ -20,7 +20,7 @@ It's required to have `proppy@^1.2.6` in order to use `proppy-extend`: `npm inst
 
 ### Plugins and config
 
-Setup must be done at the beginning of your application entry point, before other files that use `proppy-extend` are imported. It is required to at least register a connector plugin for your views framework. **For now, only the [React integration](#react) is available,** though contributions are welcome.
+Setup must be done at the beginning of your application entry point, before other files that use `proppy-extend` are imported. It is required to at least register a connector plugin for your views framework. **For now, only the [React integration](#react) is available,** though contributions are welcomed.
 
 `index.js`
 
@@ -221,7 +221,7 @@ withProps('styles', (props) => ({
 
 ### React
 
-Requires `react@^16.5.0`: `npm install react`.
+Requires `react@^16.5.0` and `proppy-react@^1.2.6`: `npm install react proppy-react`.
 
 Allows you to use `proppy-extend` with react. It must be [registered on setup](#setup):
 
@@ -236,7 +236,7 @@ config.plugin(connector);
 
 ### RxJS
 
-Requires `rxjs@^6.0.0`: `npm install rxjs`.
+Requires `rxjs@^6.0.0` and `proppy-rx@^1.2.6`: `npm install rxjs proppy-rx`.
 
 It must be [registered on setup](#setup):
 
