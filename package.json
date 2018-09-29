@@ -7,7 +7,9 @@
     "proppy",
     "react",
     "compose",
-    "composition"
+    "composition",
+    "mobx",
+    "rxjs"
   ],
   "scripts": {
     "precommit": "cross-env MSG=\"Committing in:\" nps validate",
